@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <rabbit:listener-container connection-factory="rabbitConnectionFactory" type="direct">
+        <rabbit:listener queues="some.queue" ref="myMessageListener" method="handle"/>
+    </rabbit:listener-container>
+
+    <rabbit:queue name="some.queue" />
+
+    <bean id="myMessageListener" class="com.hyf.rabbit.listener.MyMessageListener" />
+
+    <rabbit:connection-factory
+            id="rabbitConnectionFactory"
+            host="192.168.190.188"
+            port="5672"
+            username="hyfsy"
+            password="11111"
+            virtual-host="vhost1"
+            connection-timeout="1000" />
+</beans>
