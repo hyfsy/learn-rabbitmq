@@ -6,8 +6,8 @@ spring:
   rabbitmq:
 #    host: 192.168.190.188
 #    addresses: 192.168.190.188,192.168.190.189,192.168.190.190
-    addresses: amqp://guest:guest@192.168.190.188:5672/,amqp://guest:guest@192.168.190.188:5673/，amqp://guest:guest@192.168.190.188:5674/
-#    addresses: amqp://hyfsy:11111@192.168.190.188:5672/vhost1
+#    addresses: amqp://guest:guest@192.168.190.188:5672/,amqp://guest:guest@192.168.190.188:5673/,amqp://guest:guest@192.168.190.188:5674/
+    addresses: amqp://hyfsy:11111@192.168.190.188:5672/vhost1
     port: 5672
     virtual-host: vhost1
     username: hyfsy

@@ -1,3 +1,5 @@
+package com.hyf.rabbit;
+
 /**
  * 类型转换的 Class 类型的操作
  *

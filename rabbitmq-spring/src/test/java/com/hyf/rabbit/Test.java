@@ -1,3 +1,5 @@
+package com.hyf.rabbit;
+
 import org.springframework.amqp.rabbit.listener.MessageListenerContainer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

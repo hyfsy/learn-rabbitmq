@@ -1,3 +1,5 @@
+package com.hyf.rabbit;
+
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -12,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @author baB_hyf
  * @date 2021/03/07
  */
-public class Test4 {
+public class Test3 {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(RabbitConfiguration.class);
